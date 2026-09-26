@@ -1,5 +1,3 @@
-// Kesalahan 3: runtime. Kode ini lolos compile tanpa error dan tanpa warning, 
-// tetapi berhenti mendadak saat pengguna memasukkan 0 sebagai jumlah mahasiswa. 
 #include <iostream> 
   
 int main() { 
