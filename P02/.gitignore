@@ -1,0 +1,9 @@
+# Executable files / hasil kompilasi
+*.exe
+*.out
+*.o
+sinilai_v01
+
+# Folder VS Code & Debug
+.vscode/
+*.dSYM/
