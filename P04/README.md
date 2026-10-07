@@ -33,4 +33,9 @@ Folder `p04` di repository `pt-NPM` berisi `sinilai_v03.cpp` dan  `README.md`. L
 
 ## Deklarasi AI
 
-Tuliskan AI yang digunakan, prompt, dan umpan balik AI
+// Pernyataan Penggunaan AI (AI Use Declaration):
+// Kode dan materi dalam praktikum ini dikembangkan dengan bantuan AI (Gemini) 
+// sebagai alat bantu/diskusi (learning assistant). AI digunakan untuk memahami 
+// konsep dasar C++, melakukan perbaikan logika program, serta memeriksa 
+// kesesuaian penulisan sintaks. Seluruh logika akhir dan implementasi kode 
+// dipahami serta diselesaikan secara mandiri.
