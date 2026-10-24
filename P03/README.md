@@ -31,6 +31,12 @@ Nilai akhir = 100 x 0,10 + 85,5 x 0,45 + 78 x 0,25 + 80 x 0,20 = 10 + 38,475 + 1
 
 Folder `p03` di repository `pt-NPM` berisi `sinilai_v02.cpp` dan  `README.md`. Lihat Modul Pertemuan 3 bagian E.
 
-## Deklarasi AI
+## Deklarasi Penggunaan AI
 
-Tuliskan AI yang digunakan, prompt, dan umpan balik AI
+Dalam pengerjaan tugas Praktikum Pertemuan 3 (**P03**) ini, saya menggunakan bantuan kecerdasan buatan (AI) sebagai kolaborator personal dengan rincian sebagai berikut:
+
+* **Alat yang Digunakan**: Gemini
+* **Tujuan Penggunaan**: 
+  - Membantu memahami konsep logika operator aritmetika, pembagian, dan modulo (`/` dan `%`).
+  - Memberikan referensi struktur kode untuk konversi waktu, hasil bagi, modifikasi *SiNilai v0.2*, serta perbandingan ekspresi C++ dan Python.
+* **Verifikasi**: Seluruh kode yang dihasilkan telah dipelajari, disesuaikan, diuji secara mandiri di komputer lokal, dan dipastikan kebenarannya sebelum di-*commit* ke repository GitHub.
