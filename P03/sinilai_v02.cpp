@@ -9,11 +9,11 @@ using namespace std;
 int main() {
     // TODO 1: deklarasikan empat konstanta bobot dari konstanta.cpp Pertemuan 2
     //         (BOBOT_KEHADIRAN, BOBOT_MINGGUAN, BOBOT_UTS, BOBOT_UAS).
-
+    // (Disesuaikan dengan formula di atas: 10%, 45%, 25%, 20%)
     const double BOBOT_KEHADIRAN = 0.10;
-    const double BOBOT_MINGGUAN  = 0.20;
-    const double BOBOT_UTS       = 0.35;
-    const double BOBOT_UAS       = 0.35;
+    const double BOBOT_MINGGUAN  = 0.45;
+    const double BOBOT_UTS       = 0.25;
+    const double BOBOT_UAS       = 0.20;
 
     string nama;
     string npm;
@@ -37,14 +37,22 @@ int main() {
     cin >> uas;
 
     // TODO 2: hitung nilai akhir dengan formula di atas. Simpan ke variabel double nilai_akhir.
+    double nilai_akhir = (kehadiran * BOBOT_KEHADIRAN) + 
+                         (mingguan * BOBOT_MINGGUAN) + 
+                         (uts * BOBOT_UTS) + 
+                         (uas * BOBOT_UAS);
 
     // TODO 3: hitung juga rata-rata sederhana keempat komponen (tanpa bobot), simpan ke rerata_polos.
-    //         Hati-hati: pembaginya jangan bilangan bulat.
+    //         Hati-hati: pembaginya jangan bilangan bulat (gunakan 4.0 agar tidak terjadi pembagian int).
+    double rerata_polos = (kehadiran + mingguan + uts + uas) / 4.0;
 
     cout << "\n--- Kartu Nilai Mahasiswa ---\n";
     cout << "Nama        : " << nama << "\n";
     cout << "NPM         : " << npm << "\n";
+    
     // TODO 4: tampilkan nilai_akhir dan rerata_polos, sejajar dengan baris di atas.
+    cout << "Nilai akhir : " << nilai_akhir << "\n";
+    cout << "Rerata polos: " << rerata_polos << "\n";
 
     return 0;
 }
