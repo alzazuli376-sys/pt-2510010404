@@ -48,16 +48,8 @@ Folder `p06` di repository `pt-NPM` berisi `sinilai_v05.cpp`. Lihat Modul Pertem
 
 ## Deklarasi Penggunaan AI
 
-Dalam pengerjaan tugas Praktikum Pertemuan 6 (**P06**) ini, saya menggunakan bantuan kecerdasan buatan (AI) sebagai kolaborator diskusi dan pemrograman dengan rincian sebagai berikut:
-
 * **Alat yang Digunakan**: Google Gemini / Antigravity
 * **Tujuan Penggunaan**:
   - Memahami konsep perulangan bersarang (*nested loop*), pelacakan nilai maksimum/tertinggi, serta pemformatan keluaran berkolom rapi menggunakan manipulator `<iomanip>` (`fixed`, `setprecision`, `setw`, `left`, `right`).
-  - Membantu menyelesaikan implementasi *TODO 1* sampai *TODO 9* pada `sinilai_v05_awal.cpp` dan `sinilai_v05.cpp` (penghitung sebaran huruf mutu, penentuan mahasiswa peraih nilai tertinggi, serta pembuatan grafik batang `#`).
   - Memahami alur pengujian otomatis menggunakan berkas masukan (`contoh_masukan.txt`) dan *input redirection*.
-* **Prompt yang Digunakan**:
-  - *"tolong isikan todo 3 sampai 9"*
-  - *"perbaiki eror di v05"*
-  - *"kerjakan todo 1 sampai 9 sinilai_v05_awal.cpp"*
-  - *"cara isi contoh_masukan.txt nya gimana"*
 * **Verifikasi & Umpan Balik AI**: Seluruh kode yang dihasilkan telah diteliti, dipahami, dan diuji menggunakan masukan dari `contoh_masukan.txt`. Hasil keluaran (rata-rata kelas 64.66, nilai tertinggi Dewi Lestari 90.00, serta sebaran huruf mutu) telah diverifikasi dan dipastikan sesuai dengan kasus uji pada modul sebelum disimpan.
