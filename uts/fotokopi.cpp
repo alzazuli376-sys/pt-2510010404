@@ -35,7 +35,7 @@ int main() {
     int banyak_kecil = 0;
     int banyak_sedang = 0;
     int banyak_besar = 0;
-    
+
     // TODO 5a: deklarasikan penampung biaya terbesar (mulai -1) dan nama pemesannya.
     int maks_biaya = -1;
     string nama_maks = "-";
@@ -50,8 +50,7 @@ int main() {
         // TODO 1: baca nama dengan getline sampai sah (tidak kosong atau hanya spasi, dan tanpa angka),
         //         lalu rapikan menjadi Huruf Besar Di Awal Kata.
         //         Pesan penolakan: "Nama tidak boleh kosong." dan "Nama tidak boleh mengandung angka."
-        bool nama_valid = false;
-        do {
+        while (true) {
             cout << "Nama pemesan : ";
             getline(cin, nama);
             if (nama.empty()) {
@@ -59,47 +58,16 @@ int main() {
                 continue;
             }
             bool ada_angka = false;
-            bool ada_huruf = false;
             for (char c : nama) {
                 if (isdigit(c)) ada_angka = true;
-                if (isalpha(c)) ada_huruf = true;
             }
             if (ada_angka) {
                 cout << "Nama tidak boleh mengandung angka.\n";
                 continue;
             }
-            if (!ada_huruf) {
-                cout << "Nama tidak boleh kosong.\n";
-                continue;
-            }
-            bool awal_kata = true;
-            string bersih = "";
-            for (size_t k = 0; k < nama.length(); k++) {
-                char c = nama[k];
-                if (isspace(c)) {
-                    if (!bersih.empty() && bersih.back() != ' ') {
-                        bersih += ' ';
-                    }
-                    awal_kata = true;
-                } else {
-                    if (awal_kata) {
-                        bersih += toupper(c);
-                        awal_kata = false;
-                    } else {
-                        bersih += tolower(c);
-                    }
-                }
-            }
-            if (!bersih.empty() && bersih.back() == ' ') {
-                bersih.pop_back();
-            }
-            if (bersih.empty()) {
-                cout << "Nama tidak boleh kosong.\n";
-                continue;
-            }
-            nama = bersih;
-            nama_valid = true;
-        } while (!nama_valid);
+            if (islower(nama[0])) nama[0] = toupper(nama[0]);
+            break;
+        }
 
         // TODO 2: baca halaman dengan aman (bilangan bulat 1 sampai MAKS_HALAMAN), pola seperti jumlah di atas.
         //         Pesan penolakan: "Harus bilangan bulat 1 sampai 1000. Halaman: "
@@ -128,21 +96,18 @@ int main() {
 
         // TODO 4: tentukan harga per halaman dari jumlah halaman (kecil, sedang, besar) dan tambah
         //         penghitung kategorinya; biaya = halaman * harga, dikali 2 bila berwarna.
-        int harga_per_halaman = 0;
-        if (halaman <= BATAS_KECIL) {
-            harga_per_halaman = HARGA_KECIL;
-            banyak_kecil++;
-        } else if (halaman <= BATAS_SEDANG) {
-            harga_per_halaman = HARGA_SEDANG;
-            banyak_sedang++;
-        } else {
-            harga_per_halaman = HARGA_BESAR;
-            banyak_besar++;
-        }
-
-        int biaya = halaman * harga_per_halaman;
+        int harga = (halaman <= BATAS_KECIL) ? HARGA_KECIL : (halaman <= BATAS_SEDANG) ? HARGA_SEDANG : HARGA_BESAR;
+        int biaya = halaman * harga;
         if (warna == 'Y') {
             biaya *= 2;
+        }
+
+        if (halaman <= BATAS_KECIL) {
+            banyak_kecil++;
+        } else if (halaman <= BATAS_SEDANG) {
+            banyak_sedang++;
+        } else {
+            banyak_besar++;
         }
 
         cout << "  " << left << setw(16) << nama << right << setw(6) << halaman;
@@ -155,7 +120,7 @@ int main() {
 
         total_halaman += halaman;
         total_pendapatan += biaya;
-        
+
         // TODO 5b: perbarui biaya terbesar dan nama pemesannya bila biaya ini lebih besar.
         if (biaya > maks_biaya) {
             maks_biaya = biaya;
@@ -168,7 +133,7 @@ int main() {
     cout << "Total halaman     : " << total_halaman << "\n";
     cout << "Total pendapatan  : " << total_pendapatan << "\n";
     cout << "Rata-rata halaman : " << static_cast<double>(total_halaman) / jumlah << "\n";
-    
+
     // TODO 5c: cetak "Terbesar          : " diikuti nama dan biaya terbesar dalam kurung.
     cout << "Terbesar          : " << nama_maks << " (" << maks_biaya << ")\n";
 
@@ -176,15 +141,15 @@ int main() {
     // TODO 6: tiga baris batang (Kecil, Sedang, Besar) memakai perulangan bersarang:
     //         perulangan luar memilih label dan jumlahnya, perulangan dalam mencetak tanda # sebanyak itu.
     //         Format tiap baris: label rata kiri selebar 7, lalu "| ", batang, spasi, jumlah. Contoh: "Kecil  | ## 2"
-    string label_kategori[3] = {"Kecil", "Sedang", "Besar"};
-    int jumlah_kategori[3] = {banyak_kecil, banyak_sedang, banyak_besar};
+    string kat[3] = {"Kecil", "Sedang", "Besar"};
+    int jml_kat[3] = {banyak_kecil, banyak_sedang, banyak_besar};
 
     for (int k = 0; k < 3; k++) {
-        cout << left << setw(7) << label_kategori[k] << "| ";
-        for (int b = 0; b < jumlah_kategori[k]; b++) {
+        cout << left << setw(7) << kat[k] << "| ";
+        for (int b = 0; b < jml_kat[k]; b++) {
             cout << "#";
         }
-        cout << " " << jumlah_kategori[k] << "\n";
+        cout << " " << jml_kat[k] << "\n";
     }
 
     return 0;
